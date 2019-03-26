@@ -3,9 +3,15 @@ package recursion;
 import java.util.Deque;
 import java.util.LinkedList;
 
+/**
+ * Time complexity of the problem is (2 pow n)
+ * Space complexity is in the order of (n)
+ */
 public class TowersOfHanoi {
 
   private final int numRings;
+
+  private int moves;
 
   private Deque<Integer> src = new LinkedList<>(),
                         dest = new LinkedList<>(),
@@ -34,9 +40,20 @@ public class TowersOfHanoi {
       return;
     doHanoi(numRings - 1, src, temp, dest);
     dest.addFirst(src.removeFirst());
+    moves++;
     doHanoi(numRings - 1, temp, dest, src);
   }
 
 
+  public Deque<Integer> getSrc() {
+    return src;
+  }
 
+  public Deque<Integer> getDest() {
+    return dest;
+  }
+
+  public int getMoves() {
+    return moves;
+  }
 }
