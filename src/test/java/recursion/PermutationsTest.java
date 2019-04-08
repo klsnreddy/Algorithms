@@ -24,7 +24,7 @@ public class PermutationsTest {
     List<Integer> list = Arrays.asList(1, 2, 3, 4);
     List<List<Integer>> result = Permutations.getPermutations(list);
     assertNotEquals("Result should not be empty", 0, result.size());
-    assertEquals("Result size should be 6", 24, result.size());
-    assertTrue("Result should contain <3,2,1>", result.contains(Arrays.asList(3, 2, 1, 4)));
+    assertEquals("Result size should be 24", 24, result.size());
+    assertTrue("Result should contain <3,2,1,4>", result.contains(Arrays.asList(3, 2, 1, 4)));
   }
 }
